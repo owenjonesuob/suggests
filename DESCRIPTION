@@ -1,0 +1,11 @@
+Package: suggests
+Type: Package
+Title: Suggest R Package Dependencies
+Version: 0.0.1
+authors@R: person("Owen", "Jones", email = "owenjonesuob@gmail.com", role = c("aut", "cre"))
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+Imports:
+    utils
+License: MIT + file LICENSE
+Encoding: UTF-8
