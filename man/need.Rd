@@ -2,14 +2,14 @@
 % Please edit documentation in R/need.R
 \name{need}
 \alias{need}
-\title{Declare that a suggested package is required}
+\title{Declare that a package is needed}
 \usage{
-need(..., prompt = interactive())
+need(..., ask = interactive())
 }
 \arguments{
 \item{...}{Names of required packages, as character strings.}
 
-\item{prompt}{Whether to give the user the option of installing the required
+\item{ask}{Whether to give the user the option of installing the required
 packages immediately.}
 }
 \value{
@@ -17,10 +17,11 @@ Invisibly, the names of any packages which were installed.
 }
 \description{
 Declare that one or more packages are required by subsequent functionality,
-and either prompt the user to install them, or exit with an informative
-error message.
+and if they're missing, either prompt the user to install them, or exit with
+an informative error message.
 }
 \examples{
+\dontrun{
 
   read_data <- function(path, clean_names = FALSE) {
 
@@ -34,6 +35,7 @@ error message.
       output <- janitor::clean_names(output)
 
     output
+  }
  }
 
 }
