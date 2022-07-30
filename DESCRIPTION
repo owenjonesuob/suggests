@@ -1,12 +1,18 @@
 Package: suggests
 Type: Package
-Title: Suggest R Package Dependencies
+Title: Declare when Suggested Packages are Needed
 Version: 0.0.1
-authors@R: person("Owen", "Jones", email = "owenjonesuob@gmail.com", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: person("Owen", "Jones", email = "owenjonesuob@gmail.com", role = c("aut", "cre"))
+Description: By adding dependencies to the "Suggests" field of a package's
+    DESCRIPTION file, and then declaring that they are needed within any
+    dependent functionality, it is often possible to significantly reduce the
+    number of "hard" dependencies required by a package.
 Imports:
     utils
+Suggests:
+    testthat (>= 3.0.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.2
+Roxygen: list(markdown = TRUE)
+Config/testthat/edition: 3
