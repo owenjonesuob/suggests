@@ -13,13 +13,13 @@ find_deps(path = ".", threshold = NULL)
 top-level expressions.}
 }
 \value{
-A data frame, with one row per distinct file and top-level expression
-where a package is used. Packages used in the fewest places are listed
-first.
+A data frame, with one row per distinct top-level expression where a
+package is used. Packages used in the fewest places are listed first.
 }
 \description{
-A quick-and-dirty diagnostic tool to find top-level expressions (e.g.
-declared functions) in R scripts within a development package.
+A quick-and-dirty diagnostic tool to find dependency usage within top-level
+expressions (e.g. declared functions) in R scripts within a development
+package.
 }
 \details{
 This might be useful for package developers hoping to use \code{suggests::need()}
