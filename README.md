@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 # suggests: Declare when Suggested Packages are Needed
 
 <!-- badges: start -->
