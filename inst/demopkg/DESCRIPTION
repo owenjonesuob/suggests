@@ -1,0 +1,12 @@
+Package: demopkg
+Type: Package
+Title: Demo package for tests
+Version: 0.0.1
+Date: 2022-07-30
+Description: This package doesn't do much.
+Encoding: UTF-8
+RoxygenNote: 7.1.2
+Suggests:
+    stats,
+    tools,
+    utils
