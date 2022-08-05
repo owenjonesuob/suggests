@@ -2,17 +2,20 @@ Package: suggests
 Type: Package
 Title: Declare when Suggested Packages are Needed
 Version: 0.0.1
+Date: 2022-08-05
 Authors@R: person("Owen", "Jones", email = "owenjonesuob@gmail.com", role = c("aut", "cre"))
 Description: By adding dependencies to the "Suggests" field of a package's
     DESCRIPTION file, and then declaring that they are needed within any
     dependent functionality, it is often possible to significantly reduce the
     number of "hard" dependencies required by a package.
+License: MIT + file LICENSE
+URL: https://github.com/owenjonesuob/suggests
+BugReports: https://github.com/owenjonesuob/suggests/issues
 Imports:
     utils
 Suggests:
     covr,
     testthat (>= 3.0.0)
-License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
