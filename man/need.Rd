@@ -4,7 +4,7 @@
 \alias{need}
 \title{Declare that a package is needed}
 \usage{
-need(..., ask = interactive(), load = TRUE, lib.loc = .libPaths())
+need(..., ask = interactive(), load = FALSE, lib.loc = .libPaths())
 }
 \arguments{
 \item{...}{Names of required packages, as character strings.}

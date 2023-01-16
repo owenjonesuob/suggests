@@ -31,7 +31,7 @@
 #'
 #' @export
 
-need <- function(..., ask = interactive(), load = TRUE, lib.loc = .libPaths()) {
+need <- function(..., ask = interactive(), load = FALSE, lib.loc = .libPaths()) {
 
   pkgs <- sort(unlist(c(...)))
 

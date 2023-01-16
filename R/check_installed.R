@@ -1,11 +1,11 @@
 
 #' Check whether packages are installed
 #'
-#' If `load = TRUE`, try to load the namespace of each package in turn; this is
-#' slower, but less likely to return incorrect results.
-#'
 #' If `load = FALSE`, check whether a folder for the package exists in any of
 #' the specified libraries. Much faster, but less robust!
+#'
+#' If `load = TRUE`, try to load the namespace of each package in turn; this is
+#' slower, but less likely to return incorrect results.
 #'
 #' @param pkgs Character vector of package names to check.
 #' @param load Whether to make sure the packages can be loaded.
@@ -13,7 +13,7 @@
 #'
 #' @export
 
-check_installed <- function(pkgs, load = TRUE, lib.loc = .libPaths()) {
+check_installed <- function(pkgs, load = FALSE, lib.loc = .libPaths()) {
 
   is_installed <- if (isTRUE(load)) {
 
