@@ -16,14 +16,14 @@ test_that("packages not present", {
     expect_error(
       need("_illegalpackagename_", ask = FALSE),
       paste(
-        "Please install the following packages to use this function: ",
+        "Please install the following packages to use this functionality: ",
         "",
         "  install.packages(c(\"_illegalpackagename_\"))",
         sep = "\n"
       ),
       fixed = TRUE
     ),
-    "Additional packages are required to use this function: _illegalpackagename_\n\n",
+    "Additional packages are required to use this functionality: _illegalpackagename_\n\n",
     fixed = TRUE
   )
 

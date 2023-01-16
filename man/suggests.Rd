@@ -11,6 +11,14 @@ DESCRIPTION file, and then declaring that they are needed within any
 dependent functionality, it is often possible to significantly reduce the
 number of "hard" dependencies required by a package.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/owenjonesuob/suggests}
+  \item Report bugs at \url{https://github.com/owenjonesuob/suggests/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Owen Jones \email{owenjonesuob@gmail.com}
 

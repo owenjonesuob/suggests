@@ -5,6 +5,7 @@
 #' and if they're missing, either prompt the user to install them, or exit with
 #' an informative error message.
 #'
+#' @inheritParams check_installed
 #' @param ... Names of required packages, as character strings.
 #' @param ask Whether to give the user the option of installing the required
 #'   packages immediately.
@@ -30,19 +31,19 @@
 #'
 #' @export
 
-need <- function(..., ask = interactive()) {
+need <- function(..., ask = interactive(), load = TRUE, lib.loc = .libPaths()) {
 
   pkgs <- sort(unlist(c(...)))
 
-  loaded <- vapply(pkgs, requireNamespace, quietly = TRUE, FUN.VALUE = logical(1))
+  installed <- check_installed(pkgs, load = load, lib.loc = lib.loc)
 
   # Nothing to do if all packages are already present!
-  if (all(loaded))
+  if (all(installed))
     return(invisible(character()))
 
   message(
-    "Additional packages are required to use this function: ",
-    paste0(pkgs[!loaded], collapse = ", "),
+    "Additional packages are required to use this functionality: ",
+    paste0(pkgs[!installed], collapse = ", "),
     "\n"
   )
 
@@ -57,14 +58,14 @@ need <- function(..., ask = interactive()) {
 
   if (!isTRUE(ask) || choice != 1)
     stop(
-      "Please install the following packages to use this function: ",
+      "Please install the following packages to use this functionality: ",
       "\n\n  install.packages(c(",
-      paste0(dQuote(pkgs[!loaded], q = FALSE), collapse = ", "),
+      paste0(dQuote(pkgs[!installed], q = FALSE), collapse = ", "),
       "))",
       call. = FALSE
     )
 
 
-  utils::install.packages(pkgs[!loaded])
-  invisible(pkgs[!loaded])
+  utils::install.packages(pkgs[!installed])
+  invisible(pkgs[!installed])
 }

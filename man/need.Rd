@@ -4,13 +4,17 @@
 \alias{need}
 \title{Declare that a package is needed}
 \usage{
-need(..., ask = interactive())
+need(..., ask = interactive(), load = TRUE, lib.loc = .libPaths())
 }
 \arguments{
 \item{...}{Names of required packages, as character strings.}
 
 \item{ask}{Whether to give the user the option of installing the required
 packages immediately.}
+
+\item{load}{Whether to make sure the packages can be loaded.}
+
+\item{lib.loc}{Library locations to check, \code{\link[=.libPaths]{.libPaths()}} by default.}
 }
 \value{
 Invisibly, the names of any packages which were installed.
