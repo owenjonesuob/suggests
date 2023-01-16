@@ -1,8 +1,8 @@
 Package: suggests
 Type: Package
 Title: Declare when Suggested Packages are Needed
-Version: 0.0.1
-Date: 2022-08-05
+Version: 0.0.2
+Date: 2023-01-16
 Authors@R: person("Owen", "Jones", email = "owenjonesuob@gmail.com", role = c("aut", "cre"))
 Description: By adding dependencies to the "Suggests" field of a package's
     DESCRIPTION file, and then declaring that they are needed within any
@@ -17,6 +17,6 @@ Suggests:
     covr,
     testthat (>= 3.0.0)
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3
