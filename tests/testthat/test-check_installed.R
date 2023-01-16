@@ -1,9 +1,9 @@
 test_that("load equals true", {
 
-  expect_true(check_installed("utils"))
+  expect_true(check_installed("utils", load = TRUE))
 
   expect_equal(
-    check_installed(c("utils", "testthat", "thispackagedoesnotexist", load = TRUE)),
+    check_installed(c("utils", "testthat", "thispackagedoesnotexist"), load = TRUE),
     c("utils" = TRUE, "testthat" = TRUE, "thispackagedoesnotexist" = FALSE)
   )
 
@@ -16,7 +16,7 @@ test_that("load equals true", {
 
 test_that("load equals false (default)", {
 
-  expect_true(check_installed("utils", load = FALSE))
+  expect_true(check_installed("utils"))
 
   expect_equal(
     check_installed(c("utils", "testthat", "thispackagedoesnotexist")),
