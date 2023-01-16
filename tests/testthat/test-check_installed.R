@@ -8,7 +8,7 @@ test_that("load equals true (default)", {
   )
 
   # nonsense library - {testthat} is already loaded, so we get TRUE regardless
-  expect_false(check_installed("testthat", lib.loc = "thislibdoesnotexist"))
+  expect_true(check_installed("testthat", lib.loc = "thislibdoesnotexist"))
 
 
 })
