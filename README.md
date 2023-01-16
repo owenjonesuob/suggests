@@ -19,6 +19,11 @@ You can install the development version of suggests from [GitHub](https://github
 remotes::install_github("owenjonesuob/suggests")
 ```
 
+Or directly from [R-universe](https://r-universe.dev/):
+```r
+install.packages("suggests", repos = "https://owenjonesuob.r-universe.dev")
+```
+
 ## Usage
 
 You can declare that one or more packages are needed for subsequent functionality with `need()`:
