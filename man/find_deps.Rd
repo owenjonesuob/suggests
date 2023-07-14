@@ -22,7 +22,7 @@ expressions (e.g. declared functions) in R scripts within a development
 package.
 }
 \details{
-This might be useful for package developers hoping to use \code{suggests::need()}
+This might be useful for package developers hoping to use \code{\link[=need]{need()}}
 in their package, and looking for good candidates for dependencies which
 could be moved from \code{Imports} to \code{Suggests} in the \code{DESCRIPTION} file.
 

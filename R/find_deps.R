@@ -4,7 +4,7 @@
 #' expressions (e.g. declared functions) in R scripts within a development
 #' package.
 #'
-#' This might be useful for package developers hoping to use `suggests::need()`
+#' This might be useful for package developers hoping to use [need()]
 #' in their package, and looking for good candidates for dependencies which
 #' could be moved from `Imports` to `Suggests` in the `DESCRIPTION` file.
 #'

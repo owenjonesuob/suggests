@@ -2,31 +2,59 @@
 % Please edit documentation in R/need.R
 \name{need}
 \alias{need}
-\title{Declare that a package is needed}
+\title{Declare that packages are needed}
 \usage{
-need(..., ask = interactive(), load = FALSE, lib.loc = .libPaths())
+need(
+  ...,
+  msg = NULL,
+  install_cmd = NULL,
+  ask = interactive(),
+  load = FALSE,
+  lib.loc = NULL
+)
 }
 \arguments{
-\item{...}{Names of required packages, as character strings.}
+\item{...}{Names of required packages, as character strings. You can require
+a minimum version by appending \verb{>=[version]} to a package name - see
+Examples.}
+
+\item{msg}{Custom message to display; if \code{NULL}, an informative one will be
+constructed.}
+
+\item{install_cmd}{Installation command to run, as a call (i.e. probably
+wrapped with \code{\link[=quote]{quote()}} or \code{\link[=substitute]{substitute()}}). If \code{NULL}, \code{\link[=install.packages]{install.packages()}}
+will be used for package installation.}
 
 \item{ask}{Whether to give the user the option of installing the required
 packages immediately.}
 
-\item{load}{Whether to make sure the packages can be loaded.}
+\item{load}{Whether to make sure packages can be loaded - significantly
+slower, but gives an extra level of certainty.}
 
-\item{lib.loc}{Library locations to check, \code{\link[=.libPaths]{.libPaths()}} by default.}
+\item{lib.loc}{Passed to \code{\link[utils:packageDescription]{utils::packageVersion()}}.}
 }
 \value{
-Invisibly, the names of any packages which were installed.
+Invisibly, any package names from \code{...} which were installed.
 }
 \description{
-Declare that one or more packages are required by subsequent functionality,
+Declare that one or more packages are required by subsequent functionality;
 and if they're missing, either prompt the user to install them, or exit with
 an informative error message.
 }
 \examples{
 \dontrun{
+  need("dplyr")
+  need("dplyr", "tidyr")
 
+  # All unnamed arguments will be combined into one list of package names
+  shared_deps <- c("dplyr", "tidyr")
+  need(shared_deps, "stringr") # same as need("dplyr", "tidyr", "stringr")
+
+  # You can require a minimum version for some or all packages
+  need("dplyr>=1.0.0", "tidyr")
+
+
+  # Typically you'll want to use need() within a function
   read_data <- function(path, clean_names = FALSE) {
 
     # Call need() as early as possible, to avoid wasted work
@@ -40,6 +68,15 @@ an informative error message.
 
     output
   }
- }
+
+
+  # You can provide a custom message and/or installation command if needed
+  need(
+    "dplyr",
+    msg = "We need the development version of dplyr, for now!",
+    install_cmd = quote(remotes::install_github("tidyverse/dplyr"))
+  )
+
+}
 
 }

@@ -8,8 +8,12 @@
 \description{
 By adding dependencies to the "Suggests" field of a package's
 DESCRIPTION file, and then declaring that they are needed within any
-dependent functionality, it is often possible to significantly reduce the
-number of "hard" dependencies required by a package.
+dependent functionality, you can often significantly reduce the number of
+"hard" dependencies (i.e. Depends/Imports) required by your package.
+
+{suggests} aims to make that workflow as minimal and painless as possible,
+primarily via the \code{need()} function, which provides a lightweight, simple,
+speedy way to prompt your users to install missing suggested packages.
 }
 \seealso{
 Useful links:
@@ -20,7 +24,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Owen Jones \email{owenjonesuob@gmail.com}
+\strong{Maintainer}: Owen Jones \email{owenjonesuob@gmail.com} (\href{https://orcid.org/0000-0002-8410-9585}{ORCID})
 
 }
 \keyword{internal}
