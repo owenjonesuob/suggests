@@ -1,6 +1,7 @@
 # suggests: Declare when Suggested Packages are Needed
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/suggests)](https://CRAN.R-project.org/package=suggests)
 [![R-CMD-check](https://github.com/owenjonesuob/suggests/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/owenjonesuob/suggests/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/owenjonesuob/suggests/branch/main/graph/badge.svg)](https://app.codecov.io/gh/owenjonesuob/suggests?branch=main)
 <!-- badges: end -->
@@ -12,17 +13,22 @@ By adding dependencies to the "Suggests" field of a package's DESCRIPTION file, 
 
 ## Installation
 
-You can install the development version of {suggests} from [GitHub](https://github.com/) with:
+The current release is available from CRAN:
+
+```r
+install.packages("suggests")
+```
+
+Or if you'd like all the latest updates, you can install the development version: 
 
 ``` r
-# install.packages("remotes")
+# From GitHub...
 remotes::install_github("owenjonesuob/suggests")
-```
 
-Or directly from [R-universe](https://r-universe.dev/):
-```r
+# ... or from R-universe
 install.packages("suggests", repos = "https://owenjonesuob.r-universe.dev")
 ```
+
 
 ## Usage
 
